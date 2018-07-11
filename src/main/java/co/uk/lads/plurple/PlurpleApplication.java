@@ -9,4 +9,5 @@ public class PlurpleApplication {
     public static void main(String[] args) {
         SpringApplication.run(PlurpleApplication.class, args);
     }
+
 }

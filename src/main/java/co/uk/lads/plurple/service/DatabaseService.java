@@ -51,5 +51,4 @@ public class DatabaseService {
          */
         return DatabaseToEvent.mapEvent();
     }
-
 }
