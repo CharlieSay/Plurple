@@ -2,6 +2,8 @@ package co.uk.lads.plurple.service;
 
 import co.uk.lads.plurple.adapter.DatabaseToEvent;
 import co.uk.lads.plurple.adapter.DatabaseToUser;
+import co.uk.lads.plurple.resources.Event;
+import co.uk.lads.plurple.resources.User;
 
 import java.sql.*;
 import java.util.logging.Level;

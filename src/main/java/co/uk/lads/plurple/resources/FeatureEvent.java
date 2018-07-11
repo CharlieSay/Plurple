@@ -4,6 +4,11 @@ public class FeatureEvent {
     private int featureEventId;
     private int eventId;
 
+    public FeatureEvent(int featureEventId, int eventId) {
+        this.featureEventId = featureEventId;
+        this.eventId = eventId;
+    }
+
     public int getFeatureEventId() {
         return featureEventId;
     }

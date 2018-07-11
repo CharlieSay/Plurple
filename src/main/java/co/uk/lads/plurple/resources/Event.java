@@ -13,6 +13,18 @@ public class Event {
     private int categoryId;
     private String eventImage;
 
+    public Event(int eventId, LocalDateTime eventStartTime, LocalDateTime eventEndTime, String eventLocation, String eventName, String eventDescription, LocalDateTime eventCreationTime, int categoryId, String eventImage) {
+        this.eventId = eventId;
+        this.eventStartTime = eventStartTime;
+        this.eventEndTime = eventEndTime;
+        this.eventLocation = eventLocation;
+        this.eventName = eventName;
+        this.eventDescription = eventDescription;
+        this.eventCreationTime = eventCreationTime;
+        this.categoryId = categoryId;
+        this.eventImage = eventImage;
+    }
+
     public int getEventId() {
         return eventId;
     }
