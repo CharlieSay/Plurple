@@ -11,6 +11,7 @@ public class Event {
     private int categoryId;
     private int userId;
     private String eventImage;
+    private String somethingElse;
 
     public Event(int eventId, String eventStartTime, String eventEndTime, String eventLocation, String eventName, String eventDescription, String eventCreationTime, int userid, int categoryId, String eventImage) {
         this.eventId = eventId;
