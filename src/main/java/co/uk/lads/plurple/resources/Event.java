@@ -1,19 +1,18 @@
 package co.uk.lads.plurple.resources;
 
-import java.time.LocalDateTime;
-
 public class Event {
     private int eventId;
-    private LocalDateTime eventStartTime;
-    private LocalDateTime eventEndTime;
+    private String eventStartTime;
+    private String eventEndTime;
     private String eventLocation;
     private String eventName;
     private String eventDescription;
-    private LocalDateTime eventCreationTime;
+    private String eventCreationTime;
     private int categoryId;
+    private int userId;
     private String eventImage;
 
-    public Event(int eventId, LocalDateTime eventStartTime, LocalDateTime eventEndTime, String eventLocation, String eventName, String eventDescription, LocalDateTime eventCreationTime, int categoryId, String eventImage) {
+    public Event(int eventId, String eventStartTime, String eventEndTime, String eventLocation, String eventName, String eventDescription, String eventCreationTime, int userid, int categoryId, String eventImage) {
         this.eventId = eventId;
         this.eventStartTime = eventStartTime;
         this.eventEndTime = eventEndTime;
@@ -23,6 +22,7 @@ public class Event {
         this.eventCreationTime = eventCreationTime;
         this.categoryId = categoryId;
         this.eventImage = eventImage;
+        this.userId = userid;
     }
 
     public int getEventId() {
@@ -33,19 +33,19 @@ public class Event {
         this.eventId = eventId;
     }
 
-    public LocalDateTime getEventStartTime() {
+    public String getEventStartTime() {
         return eventStartTime;
     }
 
-    public void setEventStartTime(LocalDateTime eventStartTime) {
+    public void setEventStartTime(String eventStartTime) {
         this.eventStartTime = eventStartTime;
     }
 
-    public LocalDateTime getEventEndTime() {
+    public String getEventEndTime() {
         return eventEndTime;
     }
 
-    public void setEventEndTime(LocalDateTime eventEndTime) {
+    public void setEventEndTime(String eventEndTime) {
         this.eventEndTime = eventEndTime;
     }
 
@@ -73,11 +73,11 @@ public class Event {
         this.eventDescription = eventDescription;
     }
 
-    public LocalDateTime getEventCreationTime() {
+    public String getEventCreationTime() {
         return eventCreationTime;
     }
 
-    public void setEventCreationTime(LocalDateTime eventCreationTime) {
+    public void setEventCreationTime(String eventCreationTime) {
         this.eventCreationTime = eventCreationTime;
     }
 

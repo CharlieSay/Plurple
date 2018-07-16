@@ -1,5 +1,6 @@
 package co.uk.lads.plurple.resources;
 
+
 public class User {
     private int userId;
     private String userName;

@@ -6,6 +6,7 @@ import co.uk.lads.plurple.resources.Event;
 import co.uk.lads.plurple.resources.User;
 
 import java.sql.*;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -47,10 +48,46 @@ public class DatabaseService {
         return DatabaseToUser.mapUser(id,userName,displayName);
     }
 
-    public Event getEvent(String eventId){
-        /*
-        Make Connection
-         */
-        return DatabaseToEvent.mapEvent();
+    public Event getEvent(int eventId){
+        String eventName = null;
+        String eventLocation = null;
+        String eventDescription  = null;
+        int userId = 0;
+        String eventCreationTime = null;
+        String eventStartTime = null;
+        String eventEndTime = null;
+        String eventImage = null;
+        int categoryId = 0;
+
+        try{
+            ResultSet resultSet;
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM 'event' WHERE 'id'= ?")) {
+                preparedStatement.setInt(1, eventId);
+                resultSet = preparedStatement.executeQuery();
+            }
+            while (resultSet.next()){
+                eventId = resultSet.getInt(1);
+                eventLocation = resultSet.getString(2);
+                eventName = resultSet.getString(3);
+                eventDescription = resultSet.getString(4);
+                userId = resultSet.getInt(5);
+                eventCreationTime = resultSet.getString(6);
+                eventStartTime = resultSet.getString(7);
+                eventEndTime = resultSet.getString(8);
+                eventImage = resultSet.getString(9);
+                categoryId = resultSet.getInt(10);
+            }
+        }
+        catch(SQLException e){
+            Logger.getGlobal().log(Level.WARNING,e.toString());
+        }
+        return DatabaseToEvent.mapEvent(eventId,eventStartTime,eventEndTime,eventLocation,eventName,eventDescription,eventCreationTime,userId,categoryId,eventImage);
+    }
+
+    public String getRandomEventImage() {
+        DatabaseService databaseService = new DatabaseService();
+        Random randomNumber = new Random();
+        randomNumber.nextInt(6);
+        return databaseService.getEvent(1).getEventImage();
     }
 }
